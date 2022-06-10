@@ -18,12 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->enum('voltage', ['110', '220', 'auto']);
-            $table->unsignedBigInteger('brand_id');
             $table->timestamps();
         });
 
         Schema::table('devices', function (Blueprint $table) {
-            $table->foreign('brand_id')->references('id')->on('brands');
+            $table->foreign('brand_id')->constrained();
         });
     }
 
