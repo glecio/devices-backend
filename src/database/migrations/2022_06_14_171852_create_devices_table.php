@@ -13,17 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
+       
+
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
+
             $table->string('name');
             $table->text('description');
             $table->enum('voltage', ['110', '220', 'auto']);
+            
+            $table->foreignId('brand_id')->references('id')->on('brands');
             $table->timestamps();
-        });
 
-        Schema::table('devices', function (Blueprint $table) {
-            $table->foreign('brand_id')->constrained();
         });
+        
     }
 
     /**
