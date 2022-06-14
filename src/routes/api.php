@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::apiResource('brands', \App\Http\Controllers\Api\BrandController::class );
+Route::apiResource('devices', \App\Http\Controllers\Api\DeviceController::class );
