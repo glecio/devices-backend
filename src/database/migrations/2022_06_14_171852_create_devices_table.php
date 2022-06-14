@@ -13,17 +13,25 @@ return new class extends Migration
      */
     public function up()
     {
+       
+
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
+           // $table->unsignedBigInteger('brand_id');
+
+
             $table->string('name');
             $table->text('description');
             $table->enum('voltage', ['110', '220', 'auto']);
+            
+            $table->foreignId('brand_id')->references('id')->on('brands');
+            
+            
+            //$table->foreign('store_id')->references('id')->on('stores')->onDelete('cascade');
             $table->timestamps();
-        });
 
-        Schema::table('devices', function (Blueprint $table) {
-            $table->foreign('brand_id')->constrained();
         });
+        
     }
 
     /**
