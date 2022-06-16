@@ -46,7 +46,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        return $brand->with('devices')->first();
+        return $brand;
     }
 
     /**
