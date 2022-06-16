@@ -23,7 +23,7 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        return $this->device->paginate(10);
+        return $this->device->all();
     }
 
     /**

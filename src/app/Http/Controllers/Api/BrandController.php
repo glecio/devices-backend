@@ -24,7 +24,7 @@ class BrandController extends Controller
      */
     public function index()
     {
-        return $this->brand->paginate(10);
+        return $this->brand->all();
     }
 
     /**
