@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Device extends Model
 {
-    protected $fillable = ['name', 'description', 'voltage'];
+    protected $fillable = ['name', 'description', 'voltage', 'brand_id'];
     
     public function brand()
 	{
